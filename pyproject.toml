@@ -1,0 +1,38 @@
+[build-system]
+requires = ["hatchling>=1.27,<2"]
+build-backend = "hatchling.build"
+
+[project]
+name = "momenta"
+version = "1.0.0"
+description = "Momentum risk research: computational methods and published evidence"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "numpy==2.5.3",
+    "polars==1.44.2",
+    "scipy==1.18.1",
+    "scikit-learn==1.9.1",
+    "hmmlearn==0.3.3",
+    "threadpoolctl==3.7.0",
+]
+
+[project.scripts]
+momenta = "momenta.evidence:main"
+
+[dependency-groups]
+dev = ["pytest==9.1.1", "hypothesis==6.168.5", "ruff==0.16.10"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/momenta"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "--basetemp=.pytest_tmp"
+markers = ["slow: synthetic recovery checks"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

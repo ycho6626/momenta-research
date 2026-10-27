@@ -1,0 +1,13 @@
+{
+  "aggregate_tables_verified": 16,
+  "evidence_artifacts_verified": 22,
+  "licensed_inputs_required": false,
+  "numerical_source_equivalence_verified": true,
+  "python": "3.12",
+  "ruff_passed": true,
+  "scope": "Public source-checkout validation; no historical research rerun",
+  "test_seconds": 141.6,
+  "tests_passed": 152,
+  "warning_class": "hmmlearn / NumPy array-shape DeprecationWarning",
+  "warnings": 1062
+}

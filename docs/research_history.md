@@ -1,0 +1,18 @@
+# Research history
+
+This is a retrospective chronology of an **internally frozen historical study**, not an independently timestamped public preregistration. The first public repository publication followed the completed research on **2026-10-25**. Publishing internal records later does not establish that the protocol was publicly available before the results were known.
+
+Dates and times below are Korea Standard Time (UTC+09:00), transcribed from internal document headings, Git metadata and execution logs. UTC execution timestamps have been converted consistently. These internal records are author-controlled.
+
+| Recorded date | Event and supporting evidence |
+|---|---|
+| **2026-10-07** | **Initial protocol.** Commit `18b0d900`, recorded at 01:56, fixed the question, hypotheses, primary loss, sample split and inference rules. The current [research design](research_design.md) and [methodology](../METHODOLOGY.md) explain the resulting design retrospectively. |
+| **2026-10-07–08** | **Regularization amendment.** Commit `c4fee3cf` recorded the amendment on October 7 at 22:36 after noise predictors exposed a shared-penalty flaw. Sequential block penalties, exact exclusion and clipping replaced it. Acceptance followed on October 8 at 00:38 after reference checks and 800 placebo replications. [Original placebo audit](../results/registered_placebos_superseded.csv), [superseded forecasts](../results/registered_forecasts_superseded.csv), [amended audit](../results/placebo_audit.csv). |
+| **2026-10-08, 04:04–04:23** | **Model freeze.** The approved source snapshot `0f968672` was committed at 04:04, approved at 04:12 and tagged at 04:23. It fixed settings, the data manifest and model choices: RAW=L1+L2+CM; RES=L1. A preceding construction-cutoff correction removed unused future pairs and reproduced the same numerical results. [Design/holdout model comparisons](../results/forecast_results.csv). |
+| **2026-10-08, 04:23–05:06** | **Holdout execution and exact rerun.** The first execution ran 04:23:31–04:44:03; the rerun ran 04:46:00–05:06:36. All 25 numerical artifacts matched. The 127-origin [primary result](../results/primary_hypothesis.csv) did not pass its 5% rule. The [study receipt](../results/study_receipt.json) preserves the combined holdout digest. |
+| **2026-10-08, 13:32–14:33** | **Final raw-to-results reproduction.** Curation, portfolios, features, fits and bootstraps were rebuilt in 3,636.307 seconds; 25 design, 25 holdout and 37 portfolio hashes matched. An earlier attempt had stopped on CSV column order; a complete corrected rebuild followed. Final review was recorded at 16:13. [Receipt](../results/study_receipt.json) and [scope](reproducibility.md). |
+| **2026-10-25** | **Public edition.** Selected methods, synthetic tests and aggregate evidence were published after the research. [GitHub metadata](https://api.github.com/repos/ycho6626/momenta-research) records repository creation at 22:59:28 locally. The public Git history is consolidated into one initial commit; repository creation records the earlier publication date, not advance public registration. |
+
+The internal commit identifiers identify retained snapshots; they do not independently authenticate when those records existed. “Pre-specified” here means recorded internally before holdout evaluation. The study uses final-vintage historical inputs and follows full-sample data-quality review, rather than prospective live observation.
+
+Prescribed sensitivities did not revise the headline. Later concentration checks describe saved losses without refitting and are not new registered tests. Neither the chronology nor exact numerical reproduction removes the [data-timing and generalization limitations](research_design.md).
